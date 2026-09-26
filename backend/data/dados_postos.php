@@ -151,15 +151,7 @@ $postos = [
         'endereco' => 'Shopping Praia Da Costa R. Inácio Higino, 956-1038 - Vila Velha, ES, 29107, Brasil',
         'tipo_conector' => 'Type 2',
         'potencia_kw' => 6,
-    ],
-    [
-        'id' => 18,
-        'nome' => '',
-        'cidade' => '',
-        'endereco' => '',
-        'tipo_conector' => '',
-        'potencia_kw' => 0,
-    ],
+    ]
    
 ];
 
