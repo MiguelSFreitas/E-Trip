@@ -1,19 +1,5 @@
 <?php
-/**
- * dados_postos.php
- *
- * Base local com os postos de recarga reais do Espírito Santo.
- * Os dados devem ser pesquisados manualmente no site do Open Charge Map
- * (openchargemap.org) e preenchidos abaixo — sem precisar integrar a API.
- *
- * Como pesquisar:
- * 1. Acesse openchargemap.org
- * 2. Busque/filtre pelo mapa a região do Espírito Santo
- * 3. Clique em cada posto encontrado e copie: nome, cidade, endereço,
- *    tipo de conector e potência (kW)
- *
- * Responsável: Miguel + Lorenzo
- */
+
 
 $postos = [
     [
@@ -155,17 +141,11 @@ $postos = [
    
 ];
 
-/**
- * Busca todos os postos cadastrados numa cidade específica.
- * Usada quando a viagem não aguenta e é preciso sugerir onde recarregar.
- */
 function buscarPostosPorCidade($cidade, $postos) {
     return array_values(array_filter($postos, fn($p) => $p['cidade'] === $cidade));
 }
 
-/**
- * Busca um posto específico pelo ID.
- */
+
 function buscarPostoPorId($postoId, $postos) {
     foreach ($postos as $p) {
         if ($p['id'] == $postoId) {
