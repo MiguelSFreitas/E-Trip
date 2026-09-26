@@ -57,7 +57,7 @@ $distancias = [
     ['origem' => 'Serra',      'destino' => 'Vila Velha', 'distancia_km' => 00,  'tempo_min' => 00],
     ['origem' => 'Serra',      'destino' => 'Vitória',    'distancia_km' => 00,  'tempo_min' => 00],
     ['origem' => 'Vitória',    'destino' => 'Vila Velha', 'distancia_km' => 00,  'tempo_min' => 00],
-    ['origem' => 'Serra',      'destino' => 'Vitória',    'distancia_km' => 00,  'tempo_min' => 00],
+    ['origem' => 'Serra',      'destino' => 'Vitória',    'distancia_km' => 0,  'tempo_min' => 00],
 
 ];
 
