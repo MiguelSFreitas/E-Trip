@@ -137,6 +137,38 @@ $postos = [
         'endereco' => 'Shopping Praia Da Costa R. Inácio Higino, 956-1038 - Vila Velha, ES, 29107, Brasil',
         'tipo_conector' => 'Type 2',
         'potencia_kw' => 6,
+    ],
+    [
+        'id' => 18,
+        'nome' => 'Shopping Vila Velha',
+        'cidade' => 'Vila Velha',
+        'endereco' => 'Av. Luciano das Neves, 2418 - Divino Espírito Santo, Vila Velha - ES, 29100-200, Brasil',
+        'tipo_conector' => 'Type 2',
+        'potencia_kw' => 22,
+    ],
+    [
+        'id' => 19,
+        'nome' => 'Posto Ipiranga',
+        'cidade' => 'Vila Velha',
+        'endereco' => 'Av. Santa Leopoldina, 1418 - Coqueiral de Itaparica, Vila Velha - ES, 29102-385, Brasil',
+        'tipo_conector' => 'CCS2',
+        'potencia_kw' => 60,
+    ],
+    [
+        'id' => 20,
+        'nome' => 'Boulevard Shopping Vila Velha',
+        'cidade' => 'Vila Velha',
+        'endereco' => 'Boulevard Shopping Vila Velha - Rod. do Sol, 5000 - Itaparica, Vila Velha - ES, 29103-900',
+        'tipo_conector' => 'CCS2',
+        'potencia_kw' => 80,
+    ],
+    [
+        'id' => 21,
+        'nome' => 'Boulevard Shopping Vila Velha',
+        'cidade' => 'Vila Velha',
+        'endereco' => 'Boulevard Shopping Vila Velha - Rod. do Sol, 5000 - Itaparica, Vila Velha - ES, 29103-900',
+        'tipo_conector' => 'Type 2',
+        'potencia_kw' => 22,
     ]
    
 ];
