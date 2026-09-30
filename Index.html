@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>E_TRIP — Cadastro</title>
+    <link rel="stylesheet" href="estilo.css">
+  
+    <script>
+        try {
+            var t = localStorage.getItem('etrip-tema');
+            if (!t && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'escuro';
+            if (t) document.documentElement.dataset.tema = t;
+        } catch (e) {}
+    </script>
+</head>
+<body id="topo">
+
+    <div class="progresso" aria-hidden="true"></div>
+
+    <nav class="menu">
+        <a href="#inicio" class="marca">E_TRIP</a>
+        <ul>
+            <li><a href="#inicio" class="ativo">Início</a></li>
+            <li><a href="#cadastro">Cadastro</a></li>
+            <li><a href="#vantagens">Vantagens</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li>
+                <button type="button" class="tema" id="tema" aria-label="Alternar tema claro e escuro" aria-pressed="false">
+                    <span class="lua"></span>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="inicio">
+        <div class="hero-texto">
+            <h1>E_TRIP</h1>
+            <p>Crie seu acesso e planeje viagens de carro elétrico
+               sem medo de ficar sem bateria.</p>
+            <a href="#cadastro" class="hero-botao">Criar meu acesso</a>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+            <div class="bateria">
+                <span class="celula"></span>
+                <span class="celula"></span>
+                <span class="celula"></span>
+                <span class="celula"></span>
+                <span class="celula"></span>
+            </div>
+            <div class="estrada"><span class="carro"></span></div>
+        </div>
+    </header>
+
+    <main class="camadas" id="cadastro">
+
+        <form method="post" action="index.php" id="formulario-cadastro"></form>
+
+        <div class="paineis">
+
+            <section class="camada" id="dados">
+                <header class="camada-topo">
+                    <span class="passo">1</span>
+                    <div>
+                        <h2>Seus dados</h2>
+                        <p>Como a gente chama e fala com você.</p>
+                    </div>
+                </header>
+
+                <div class="campos">
+                    <div class="campo campo-largo" id="c_nome">
+                        <label for="nome">Nome completo</label>
+                        <div class="entrada">
+                            <input type="text" id="nome" name="nome" form="formulario-cadastro" autocomplete="name" required>
+                            <span class="check"></span>
+                        </div>
+                        <small class="dica">Digite nome e sobrenome.</small>
+                    </div>
+
+                    <div class="campo" id="c_email">
+                        <label for="email">E-mail</label>
+                        <div class="entrada">
+                            <input type="email" id="email" name="email" form="formulario-cadastro" autocomplete="email" required>
+                            <span class="check"></span>
+                        </div>
+                        <small class="dica">Use um e-mail válido, como nome@email.com.</small>
+                    </div>
+
+                    <div class="campo" id="c_telefone">
+                        <label for="telefone">Telefone de contato</label>
+                        <div class="entrada">
+                            <input type="tel" id="telefone" name="telefone" form="formulario-cadastro" autocomplete="tel" inputmode="numeric"
+                                   pattern="\(\d{2}\) \d{4,5}-\d{4}" title="Use DDD e número, como (27) 99999-9999" required>
+                            <span class="check"></span>
+                        </div>
+                        <small class="dica">Use DDD e número, como (27) 99999-9999.</small>
+                    </div>
+                </div>
+            </section>
+
+            <section class="camada" id="veiculo">
+                <header class="camada-topo">
+                    <span class="passo">2</span>
+                    <div>
+                        <h2>Seu carro</h2>
+                        <p>Assim ajustamos o cálculo de bateria ao seu modelo.</p>
+                    </div>
+                </header>
+
+                <div class="campos">
+                    <div class="campo campo-largo" id="c_carro">
+                        <label for="carro">Qual carro elétrico você usa?</label>
+                        <div class="entrada sel">
+                            <select id="carro" name="carro" form="formulario-cadastro" required>
+                                <option value="">Selecione...</option>
+                                <option>BYD Dolphin</option>
+                                <option>BYD Seal</option>
+                                <option>Tesla Model 3</option>
+                                <option>GWM Ora 03</option>
+                                <option>Renault Kwid E-Tech</option>
+                                <option>Nissan Leaf</option>
+                                <option>Outro</option>
+                            </select>
+                            <span class="check"></span>
+                        </div>
+                        <small class="dica">Escolha um carro da lista. Se o seu não aparece, use "Outro".</small>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <aside class="resumo" aria-live="polite">
+            <h2>Seu acesso</h2>
+
+            <div class="cartao-perfil" id="cartaoPerfil">
+                <div class="cartao-topo">
+                    <span class="cartao-marca">E_TRIP</span>
+                    <div class="mini-bateria" aria-hidden="true"><span class="mini-nivel"></span></div>
+                </div>
+
+                <div class="cartao-pessoa">
+                    <span class="avatar" id="avatar">?</span>
+                    <div>
+                        <p class="c-nome vazio" id="p_nome">Seu nome</p>
+                        <p class="c-linha vazio" id="p_email">seu@email.com</p>
+                        <p class="c-linha vazio" id="p_tel">(00) 00000-0000</p>
+                    </div>
+                </div>
+
+                <p class="c-carro vazio" id="p_carro">Escolha seu carro</p>
+            </div>
+
+            <p class="contagem" id="contagem">0 de 4 campos preenchidos</p>
+
+            <button type="submit" form="formulario-cadastro" class="botao-calcular" id="botao">
+                <span class="rotulo">Entrar</span>
+            </button>
+        </aside>
+
+    </main>
+
+    <section class="secao" id="vantagens">
+        <div class="secao-miolo">
+            <h2>Por que criar seu acesso</h2>
+
+            <div class="passos">
+                <article class="cartao">
+                    <span class="icone-cartao">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 11v2M6 10v4M10 10v4"/></svg>
+                    </span>
+                    <h3>Cálculo para o seu carro</h3>
+                    <p>Você informa o modelo e a bateria é calculada com base nele.</p>
+                </article>
+                <article class="cartao">
+                    <span class="icone-cartao">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h6a4 4 0 0 0 0-8h-4a4 4 0 0 1 0-8h6"/></svg>
+                    </span>
+                    <h3>Viagem planejada</h3>
+                    <p>Escolha origem e destino e veja antes de sair se chega como quer.</p>
+                </article>
+                <article class="cartao">
+                    <span class="icone-cartao">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>
+                    </span>
+                    <h3>Rápido de usar</h3>
+                    <p>Cadastro em quatro campos e o cálculo em três passos.</p>
+                </article>
+            </div>
+
+            <h3 class="perguntas-titulo">Perguntas rápidas</h3>
+            <div class="perguntas">
+                <details>
+                    <summary>Preciso ter um carro elétrico?</summary>
+                    <div class="resposta">A lista traz modelos comuns. Se você ainda não tem um, ou o seu não aparece, escolha "Outro".</div>
+                </details>
+                <details>
+                    <summary>Por que pedem o meu carro?</summary>
+                    <div class="resposta">Cada modelo gasta uma quantidade diferente de energia. Com o carro escolhido, o cálculo da viagem fica mais fiel ao que você usa.</div>
+                </details>
+                <details>
+                    <summary>O que acontece ao clicar em Entrar?</summary>
+                    <div class="resposta">Você vai para a tela de cálculo de viagem, onde escolhe o carro, a rota e a bateria.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <footer class="rodape" id="contato">
+        <div>
+            <strong>E_TRIP</strong>
+            <p>Dúvidas ou sugestões? Escreva para <a href="mailto:contato@exemplo.com">E_trip2026@gmail.com</a></p>
+        </div>
+        <a href="#topo" class="voltar">Voltar ao topo</a>
+    </footer>
+
+   
+
+</body>
+</html>
