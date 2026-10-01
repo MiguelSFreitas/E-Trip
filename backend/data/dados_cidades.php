@@ -12,8 +12,8 @@ $cidades = [
 
 
 $distancias = [
-    // Trajeto principal pela BR-101 (norte -> sul)
-    ['origem' => 'Pinheiros',  'destino' => 'São Mateus', 'distancia_km' => 00,  'tempo_min' => 00],
+    
+    ['origem' => 'Pinheiros',  'destino' => 'São Mateus', 'distancia_km' => 71,  'tempo_min' => 76],
     ['origem' => 'São Mateus', 'destino' => 'Linhares',   'distancia_km' => 00,  'tempo_min' => 00],
     ['origem' => 'Linhares',   'destino' => 'Ibiraçu',    'distancia_km' => 00,  'tempo_min' => 00],
     ['origem' => 'Ibiraçu',    'destino' => 'Serra',      'distancia_km' => 00,  'tempo_min' => 00],
@@ -28,7 +28,7 @@ $distancias = [
     ['origem' => 'Pinheiros',  'destino' => 'Linhares',   'distancia_km' => 00, 'tempo_min' => 00],
     ['origem' => 'Pinheiros',  'destino' => 'Ibiraçu',    'distancia_km' => 00, 'tempo_min' => 00],
     ['origem' => 'Pinheiros',  'destino' => 'Serra',      'distancia_km' => 00, 'tempo_min' => 00],
-    ['origem' => 'Pinheiros',  'destino' => 'Vitória',    'distancia_km' => 00, 'tempo_min' => 00],
+    ['origem' => 'Pinheiros',  'destino' => 'Vitória',    'distancia_km' => 280, 'tempo_min' => 300],
     ['origem' => 'Pinheiros',  'destino' => 'Vila Velha', 'distancia_km' => 00, 'tempo_min' => 00],
 
     ['origem' => 'São Mateus', 'destino' => 'Ibiraçu',    'distancia_km' => 00, 'tempo_min' => 00],
